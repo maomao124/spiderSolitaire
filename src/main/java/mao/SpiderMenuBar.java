@@ -19,33 +19,45 @@ import javax.swing.ButtonGroup;
  * Description(描述)： 无
  */
 
+
 public class SpiderMenuBar extends JMenuBar
 {
+
 
     //生成spider框架对象
     Spider main = null;
 
+
     //生成菜单组
     JMenu jNewGame = new JMenu("游戏");
+
     JMenu jHelp = new JMenu("帮助");
 
     //生成菜单项
     JMenuItem jItemAbout = new JMenuItem("关于");
+
     JMenuItem jItemOpen = new JMenuItem("开局");
+
     JMenuItem jItemPlayAgain = new JMenuItem("重新发牌");
+
 
     //生成单选框
     JRadioButtonMenuItem jRMItemEasy = new JRadioButtonMenuItem("简单：单一花色");
+
     JRadioButtonMenuItem jRMItemNormal = new JRadioButtonMenuItem("中级：双花色");
+
     JRadioButtonMenuItem jRMItemHard = new JRadioButtonMenuItem("高级：四花色");
-    ;
+
 
     JMenuItem jItemExit = new JMenuItem("退出");
+
     JMenuItem jItemValid = new JMenuItem("显示可行操作");
 
 
     /**
      * *构造函数，生成JMenuBar的图形界面
+     *
+     * @param spider the spider
      */
     public SpiderMenuBar(Spider spider)
     {
