@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>test</mainClass>
+                            <mainClass>mao.Run</mainClass>
                             <!--更改项，主类名-->
                         </manifest>
                     </archive>
