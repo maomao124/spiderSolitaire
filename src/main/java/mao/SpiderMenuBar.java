@@ -5,6 +5,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.ButtonGroup;
+import java.awt.*;
 
 /**
  * Project name(项目名称)：蜘蛛纸牌
@@ -89,6 +90,19 @@ public class SpiderMenuBar extends JMenuBar
 
         this.add(jNewGame);
         this.add(jHelp);
+
+        //设置个性化
+        jItemOpen.setBackground(Color.cyan);
+        jItemPlayAgain.setBackground(Color.yellow);
+        jItemValid.setBackground(Color.green);
+
+        jRMItemEasy.setBackground(Color.pink);
+        jRMItemNormal.setBackground(Color.pink);
+        jRMItemHard.setBackground(Color.pink);
+
+        jItemExit.setBackground(Color.red);
+
+        jItemAbout.setBackground(Color.green);
 
         //为组件添加事件监听并实现
         //“开局”
