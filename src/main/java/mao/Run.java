@@ -15,6 +15,11 @@ package mao;
 
 public class Run
 {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args)
     {
         Spider spider = new Spider();

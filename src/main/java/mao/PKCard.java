@@ -18,30 +18,66 @@ import javax.swing.*;
  * Description(描述)： 无
  */
 
+
 public class PKCard extends JLabel implements MouseListener,
         MouseMotionListener
 {
 
+    /**
+     * The Point.
+     */
     //纸牌的位置
     Point point = null;
+    /**
+     * The Init point.
+     */
     Point initPoint = null;
 
+    /**
+     * The Value.
+     */
     int value = 0;
+    /**
+     * The Type.
+     */
     int type = 0;
 
+    /**
+     * The Name.
+     */
     String name = null;
+    /**
+     * The Pane.
+     */
     Container pane = null;
 
+    /**
+     * The Main.
+     */
     Spider main = null;
 
+    /**
+     * The Can move.
+     */
     boolean canMove = false;
+    /**
+     * The Is front.
+     */
     boolean isFront = false;
+    /**
+     * The Previous card.
+     */
     PKCard previousCard = null;
 
     public void mouseClicked(MouseEvent arg0)
     {
     }
 
+    /**
+     * Flash card.
+     *
+     * @param card the card
+     */
     public void flashCard(PKCard card)
     {
         //启动Flash线程
@@ -53,6 +89,12 @@ public class PKCard extends JLabel implements MouseListener,
         }
     }
 
+    /**
+     * Create image icon image icon.
+     *
+     * @param path the path
+     * @return the image icon
+     */
     protected static ImageIcon createImageIcon(String path)
     {
         URL imgURL = PKCard.class.getResource(path);
@@ -67,10 +109,18 @@ public class PKCard extends JLabel implements MouseListener,
         }
     }
 
+    /**
+     * The type Flash.
+     */
     static class Flash extends Thread
     {
         private PKCard card = null;
 
+        /**
+         * Instantiates a new Flash.
+         *
+         * @param card the card
+         */
         public Flash(PKCard card)
         {
             this.card = card;
@@ -190,6 +240,11 @@ public class PKCard extends JLabel implements MouseListener,
         }
     }
 
+    /**
+     * Sets next card location.
+     *
+     * @param point the point
+     */
     /*
      **方法：放置纸牌
      */
@@ -222,6 +277,9 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：int
      * *方法：判断可用列
+     *
+     * @param point the point
+     * @return the int
      */
     public int whichColumnAvailable(Point point)
     {
@@ -285,6 +343,9 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：void
      * *方法：移动（x，y）个位置
+     *
+     * @param x the x
+     * @param y the y
      */
     public void moving(int x, int y)
     {
@@ -309,6 +370,9 @@ public class PKCard extends JLabel implements MouseListener,
 
     /**
      * *构造函数
+     *
+     * @param name   the name
+     * @param spider the spider
      */
     public PKCard(String name, Spider spider)
     {
@@ -349,6 +413,8 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：void
      * *方法：将纸牌移动到点point
+     *
+     * @param point the point
      */
     public void moveto(Point point)
     {
@@ -359,6 +425,8 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：void
      * *方法：判断牌是否能移动
+     *
+     * @param can the can
      */
     public void setCanMove(boolean can)
     {
@@ -395,12 +463,19 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：boolean
      * *方法：判断card是否是正面
+     *
+     * @return the boolean
      */
     public boolean isCardFront()
     {
         return this.isFront;
     }
 
+    /**
+     * Is card can move boolean.
+     *
+     * @return the boolean
+     */
     /*
      **返回值：boolean
      **方法：返回是否能够移动
@@ -413,6 +488,8 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：int
      * *方法：获得card的内容值
+     *
+     * @return the card value
      */
     public int getCardValue()
     {
@@ -422,6 +499,8 @@ public class PKCard extends JLabel implements MouseListener,
     /**
      * *返回值：int
      * *方法：获得card的类型
+     *
+     * @return the card type
      */
     public int getCardType()
     {

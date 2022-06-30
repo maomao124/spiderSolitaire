@@ -18,13 +18,17 @@ import java.util.*;
  * Description(描述)： 无
  */
 
+
 public class Spider extends JFrame
 {
 
+
     //整型变量，表示难度等级为：简单
     public static final int EASY = 1;
+
     //整型变量，表示难度等级为：普通
     public static final int NATURAL = 2;
+
     //整型变量，表示难度等级为：难
     public static final int HARD = 3;
     //设定初始难度等级为简单
@@ -37,6 +41,7 @@ public class Spider extends JFrame
     private int n = 0;
     private int a = 0;
     private int finish = 0;
+
     Hashtable<Point, PKCard> table = null;
     private final JLabel[] groundLabel;
 
@@ -142,6 +147,8 @@ public class Spider extends JFrame
     /**
      * *返回值：int
      * *返回牌的数量
+     *
+     * @return the c
      */
     public int getC()
     {
@@ -150,6 +157,8 @@ public class Spider extends JFrame
 
     /**
      * *设置等级
+     *
+     * @param grade the grade
      */
     public void setGrade(int grade)
     {
@@ -377,6 +386,9 @@ public class Spider extends JFrame
         }
     }
 
+    /**
+     * Deal.
+     */
     /*
      **返回值：void
      **方法：游戏运行
@@ -433,6 +445,12 @@ public class Spider extends JFrame
         c += 10;
     }
 
+    /**
+     * Gets previous card.
+     *
+     * @param card the card
+     * @return the previous card
+     */
     /*
      **返回值：PKCard对象
      **方法：获得card上面的那张牌
@@ -454,6 +472,9 @@ public class Spider extends JFrame
     /**
      * *返回值：PKCard对象
      * *方法：取得card下面的一张牌
+     *
+     * @param card the card
+     * @return the next card
      */
     public PKCard getNextCard(PKCard card)
     {
@@ -472,6 +493,9 @@ public class Spider extends JFrame
     /**
      * *返回值：Point对象
      * *方法：取得第column列最后一张牌的位置
+     *
+     * @param column the column
+     * @return the last card location
      */
     public Point getLastCardLocation(int column)
     {
@@ -486,11 +510,20 @@ public class Spider extends JFrame
         return point;
     }
 
+    /**
+     * Gets ground label location.
+     *
+     * @param column the column
+     * @return the ground label location
+     */
     public Point getGroundLabelLocation(int column)
     {
         return new Point(groundLabel[column].getLocation());
     }
 
+    /**
+     * Sets ground label z order.
+     */
     /*
      **返回值：void
      **方法：放置groundLable组件
@@ -504,6 +537,11 @@ public class Spider extends JFrame
         }
     }
 
+    /**
+     * Have finish.
+     *
+     * @param column the column
+     */
     /*
      **返回值：void
      **方法：判断纸牌的摆放是否完成
